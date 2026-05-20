@@ -490,7 +490,7 @@ function Field({ label, name, placeholder }: { label: string; name: string; plac
 
 function FinalCTA() {
   return (
-    <section className="relative isolate overflow-hidden bg-background py-32 md:py-48">
+    <section className="relative isolate overflow-hidden bg-transparent py-32 md:py-48">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sage/40 blur-3xl" />
       </div>
