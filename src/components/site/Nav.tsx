@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { openBookingWizard } from "./BookingWizard";
+
 
 const links = [
   { href: "#home", label: "Home" },
@@ -43,12 +45,12 @@ export function Nav() {
           ))}
         </nav>
 
-        <a
-          href="#contact"
+        <button
+          onClick={() => openBookingWizard()}
           className="hidden rounded-full bg-charcoal px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-charcoal/90 hover:shadow-lg md:inline-flex"
         >
           Book a Slot
-        </a>
+        </button>
 
         <button
           onClick={() => setOpen((v) => !v)}
@@ -72,12 +74,12 @@ export function Nav() {
                 {l.label}
               </a>
             ))}
-            <a
-              href="https://wa.me/254110879109"
+            <button
+              onClick={() => { setOpen(false); openBookingWizard(); }}
               className="mt-2 inline-flex justify-center rounded-full bg-charcoal px-5 py-3 text-sm font-medium text-white"
             >
               Book a Slot
-            </a>
+            </button>
           </div>
         </div>
       )}
