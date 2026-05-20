@@ -7,6 +7,9 @@ import straighteningImg from "@/assets/straightening.jpg";
 import weavelinesImg from "@/assets/weavelines.jpg";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { MeshBackground } from "@/components/site/MeshBackground";
+import { BookingWizard, openBookingWizard } from "@/components/site/BookingWizard";
+import { QuickPromptsDock } from "@/components/site/QuickPromptsDock";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -78,8 +81,11 @@ const testimonials = [
 function Home() {
   useReveal();
   return (
-    <div id="home" className="bg-background text-foreground">
+    <div id="home" className="relative text-foreground">
+      <MeshBackground />
       <Nav />
+      <BookingWizard />
+      <QuickPromptsDock />
       <WhatsAppFloat />
       <Hero />
       <HouseCalls />
