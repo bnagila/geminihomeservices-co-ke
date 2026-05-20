@@ -128,13 +128,13 @@ function Hero() {
         </p>
 
         <div className="reveal mt-10 flex flex-wrap items-center gap-3">
-          <a
-            href={WHATSAPP}
+          <button
+            onClick={() => openBookingWizard()}
             className="group inline-flex items-center gap-2 rounded-full bg-charcoal px-7 py-4 text-sm font-medium text-white transition-all hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]"
           >
             Book a House Call
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+          </button>
           <a
             href="#services"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 px-7 py-4 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-white"
