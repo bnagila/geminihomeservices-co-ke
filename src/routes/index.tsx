@@ -3,6 +3,8 @@ import { ArrowUpRight, Check, Clock, MapPin, Phone, Sparkles } from "lucide-reac
 import heroImg from "@/assets/hero.jpg";
 import houseCallImg from "@/assets/housecall.jpg";
 import lifestyleImg from "@/assets/lifestyle.jpg";
+import straighteningImg from "@/assets/straightening.jpg";
+import weavelinesImg from "@/assets/weavelines.jpg";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { useReveal } from "@/hooks/use-reveal";
@@ -29,11 +31,11 @@ export const Route = createFileRoute("/")({
 const WHATSAPP = "https://wa.me/254110879109";
 const PHONE_DISPLAY = "0110 879 109";
 
-const houseCalls = [
+const houseCalls: { n: string; title: string; desc: string; img?: string }[] = [
   { n: "01", title: "Hair Undo", desc: "Gentle, careful removal of styles — the quiet first step of every ritual." },
   { n: "02", title: "Hair Wash, Conditioning & Leave-In", desc: "Deep cleanse and nourishment, finished with a featherlight leave-in." },
-  { n: "03", title: "Hair Straightening", desc: "Silk-smooth blowouts performed with patience and precision." },
-  { n: "04", title: "Simple Weave Lines", desc: "Clean, considered cornrows — laid in calm, even hands." },
+  { n: "03", title: "Hair Straightening", desc: "Silk-smooth blowouts performed with patience and precision.", img: straighteningImg },
+  { n: "04", title: "Simple Weave Lines", desc: "Clean, considered cornrows — laid in calm, even hands.", img: weavelinesImg },
   { n: "05", title: "Simple Hair Twists", desc: "Soft, low-tension twists styled for everyday elegance." },
 ];
 
@@ -195,6 +197,18 @@ function HouseCalls() {
                   <p className="mt-3 max-w-lg text-sm leading-relaxed text-charcoal/65 md:text-base">
                     {s.desc}
                   </p>
+                  {s.img && (
+                    <div className="mt-5 overflow-hidden rounded-2xl">
+                      <img
+                        src={s.img}
+                        alt={s.title}
+                        loading="lazy"
+                        width={1024}
+                        height={1024}
+                        className="aspect-[4/3] w-full max-w-lg object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                  )}
                 </div>
                 <a
                   href={WHATSAPP}
