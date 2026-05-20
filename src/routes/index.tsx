@@ -7,6 +7,9 @@ import straighteningImg from "@/assets/straightening.jpg";
 import weavelinesImg from "@/assets/weavelines.jpg";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { MeshBackground } from "@/components/site/MeshBackground";
+import { BookingWizard, openBookingWizard } from "@/components/site/BookingWizard";
+import { QuickPromptsDock } from "@/components/site/QuickPromptsDock";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -78,8 +81,11 @@ const testimonials = [
 function Home() {
   useReveal();
   return (
-    <div id="home" className="bg-background text-foreground">
+    <div id="home" className="relative text-foreground">
+      <MeshBackground />
       <Nav />
+      <BookingWizard />
+      <QuickPromptsDock />
       <WhatsAppFloat />
       <Hero />
       <HouseCalls />
@@ -122,13 +128,13 @@ function Hero() {
         </p>
 
         <div className="reveal mt-10 flex flex-wrap items-center gap-3">
-          <a
-            href={WHATSAPP}
+          <button
+            onClick={() => openBookingWizard()}
             className="group inline-flex items-center gap-2 rounded-full bg-charcoal px-7 py-4 text-sm font-medium text-white transition-all hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]"
           >
             Book a House Call
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+          </button>
           <a
             href="#services"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 px-7 py-4 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-white"
@@ -159,7 +165,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function HouseCalls() {
   return (
-    <section id="services" className="relative bg-sage/60 py-28 md:py-40">
+    <section id="services" className="relative bg-sage/40 py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="reveal md:col-span-5">
@@ -227,7 +233,7 @@ function HouseCalls() {
 
 function Lifestyle() {
   return (
-    <section id="lifestyle" className="bg-cream py-28 md:py-40">
+    <section id="lifestyle" className="bg-cream/70 py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal max-w-2xl">
           <SectionLabel>Lifestyle Assistance</SectionLabel>
@@ -243,7 +249,7 @@ function Lifestyle() {
           {lifestyle.map((s, i) => (
             <article
               key={s.title}
-              className="reveal group relative overflow-hidden rounded-3xl bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.15)] transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_30px_80px_-30px_rgba(0,0,0,0.2)] md:p-10"
+              className="reveal group relative overflow-hidden rounded-3xl card-glass p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_30px_80px_-30px_rgba(0,0,0,0.25)] md:p-10"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="mb-10 h-10 w-10 rounded-full bg-eucalyptus/15 ring-1 ring-eucalyptus/30" />
@@ -283,7 +289,8 @@ function WhyUs() {
     { value: "100%", label: "client satisfaction" },
   ];
   return (
-    <section className="bg-background py-28 md:py-40">
+    <section className="bg-transparent py-28 md:py-40">
+
       <div className="mx-auto grid max-w-7xl gap-20 px-6 md:grid-cols-2 md:px-10">
         <div className="reveal">
           <SectionLabel>Why Gemini</SectionLabel>
@@ -356,7 +363,7 @@ function Testimonials() {
 
 function Hours() {
   return (
-    <section className="bg-background py-28 md:py-40">
+    <section className="bg-transparent py-28 md:py-40">
       <div className="mx-auto max-w-5xl px-6 md:px-10">
         <div className="reveal text-center">
           <SectionLabel>Hours & Availability</SectionLabel>
@@ -426,7 +433,7 @@ function Contact() {
         </div>
 
         <form
-          className="reveal rounded-3xl bg-white p-8 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.25)] md:p-10"
+          className="reveal rounded-3xl card-glass p-8 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.3)] md:p-10"
           onSubmit={(e) => {
             e.preventDefault();
             const form = e.currentTarget as HTMLFormElement;
@@ -483,7 +490,7 @@ function Field({ label, name, placeholder }: { label: string; name: string; plac
 
 function FinalCTA() {
   return (
-    <section className="relative isolate overflow-hidden bg-background py-32 md:py-48">
+    <section className="relative isolate overflow-hidden bg-transparent py-32 md:py-48">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sage/40 blur-3xl" />
       </div>
