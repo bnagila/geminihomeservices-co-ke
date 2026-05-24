@@ -49,6 +49,14 @@ const lifestyle = [
   { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are." },
 ];
 
+const housekeeping = [
+  { title: "Deep Home Cleaning", desc: "A thorough, room-by-room refresh — floors, surfaces, and every corner touched with care." },
+  { title: "Laundry & Ironing", desc: "Wash, fold, and press. Clothes returned crisp and ready to wear." },
+  { title: "Bed Linen Refresh", desc: "Fresh sheets, fluffed pillows, and a bed made to feel like a hotel." },
+  { title: "Kitchen Deep Clean", desc: "Appliances, cabinets, and workspaces — scrubbed, sanitized, and sparkling." },
+  { title: "Closet & Wardrobe Organizing", desc: "Neatly arranged, season-sorted, and easy to navigate every morning." },
+];
+
 const reasons = [
   "Convenience at your doorstep",
   "Trusted and discreet service",
