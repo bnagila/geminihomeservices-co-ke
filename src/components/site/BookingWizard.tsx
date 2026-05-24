@@ -19,6 +19,11 @@ const focuses = [
   { id: "errands", label: "Errand Running" },
   { id: "shopping", label: "Personal Shopper" },
   { id: "meal-prep", label: "Meal Prep" },
+  { id: "deep-clean", label: "Deep Home Cleaning" },
+  { id: "laundry", label: "Laundry & Ironing" },
+  { id: "bed-linen", label: "Bed Linen Refresh" },
+  { id: "kitchen-clean", label: "Kitchen Deep Clean" },
+  { id: "closet-org", label: "Closet Organizing" },
 ];
 
 export type WizardOpenDetail = { focus?: string };

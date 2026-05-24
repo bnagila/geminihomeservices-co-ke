@@ -3,14 +3,15 @@ import { ArrowUpRight, Check, Clock, MapPin, Phone, Sparkles } from "lucide-reac
 import heroImg from "@/assets/hero.jpg";
 import houseCallImg from "@/assets/housecall.jpg";
 import lifestyleImg from "@/assets/lifestyle.jpg";
+import housekeepingImg from "@/assets/housekeeping.jpg";
 import straighteningImg from "@/assets/straightening.jpg";
 import weavelinesImg from "@/assets/weavelines.jpg";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { MeshBackground } from "@/components/site/MeshBackground";
 import { BookingWizard, openBookingWizard } from "@/components/site/BookingWizard";
-import { QuickPromptsDock } from "@/components/site/QuickPromptsDock";
 import { useReveal } from "@/hooks/use-reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,6 +47,14 @@ const lifestyle = [
   { title: "Errand Running", desc: "Pickups, drop-offs, and small tasks handled quietly so your day flows." },
   { title: "Personal Shopper", desc: "Thoughtfully selected groceries, gifts, and essentials, delivered." },
   { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are." },
+];
+
+const housekeeping = [
+  { title: "Deep Home Cleaning", desc: "A thorough, room-by-room refresh — floors, surfaces, and every corner touched with care." },
+  { title: "Laundry & Ironing", desc: "Wash, fold, and press. Clothes returned crisp and ready to wear." },
+  { title: "Bed Linen Refresh", desc: "Fresh sheets, fluffed pillows, and a bed made to feel like a hotel." },
+  { title: "Kitchen Deep Clean", desc: "Appliances, cabinets, and workspaces — scrubbed, sanitized, and sparkling." },
+  { title: "Closet & Wardrobe Organizing", desc: "Neatly arranged, season-sorted, and easy to navigate every morning." },
 ];
 
 const reasons = [
@@ -85,11 +94,11 @@ function Home() {
       <MeshBackground />
       <Nav />
       <BookingWizard />
-      <QuickPromptsDock />
       <WhatsAppFloat />
       <Hero />
       <HouseCalls />
       <Lifestyle />
+      <Housekeeping />
       <WhyUs />
       <Testimonials />
       <Hours />
@@ -271,6 +280,57 @@ function Lifestyle() {
           <img
             src={lifestyleImg}
             alt="Linen tote with fresh produce and flowers"
+            loading="lazy"
+            width={1400}
+            height={900}
+            className="h-[360px] w-full object-cover md:h-[520px]"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Housekeeping() {
+  return (
+    <section id="housekeeping" className="bg-sage/30 py-28 md:py-40">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="reveal max-w-2xl">
+          <SectionLabel>Housekeeping</SectionLabel>
+          <h2 className="mt-5 font-display text-4xl leading-[1.05] tracking-tight text-charcoal md:text-6xl">
+            A home that breathes.
+          </h2>
+          <p className="mt-6 text-base leading-relaxed text-charcoal/65 md:text-lg">
+            Meticulous care for the spaces you live in — cleaned, organized, and restored to calm.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {housekeeping.map((s, i) => (
+            <article
+              key={s.title}
+              className="reveal group relative overflow-hidden rounded-3xl card-glass p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_30px_80px_-30px_rgba(0,0,0,0.25)] md:p-10"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <div className="mb-10 h-10 w-10 rounded-full bg-eucalyptus/15 ring-1 ring-eucalyptus/30" />
+              <h3 className="font-display text-2xl tracking-tight text-charcoal md:text-3xl">
+                {s.title}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-charcoal/65">{s.desc}</p>
+              <a
+                href={WHATSAPP}
+                className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-eucalyptus transition-colors hover:text-charcoal"
+              >
+                Request <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div className="reveal mt-16 overflow-hidden rounded-3xl">
+          <img
+            src={housekeepingImg}
+            alt="A serene, sunlit bedroom with fresh white linens"
             loading="lazy"
             width={1400}
             height={900}
@@ -539,6 +599,7 @@ function Footer() {
           <ul className="space-y-2 text-sm">
             <li><a href="#services" className="hover:text-white">House Calls</a></li>
             <li><a href="#lifestyle" className="hover:text-white">Lifestyle</a></li>
+            <li><a href="#housekeeping" className="hover:text-white">Housekeeping</a></li>
             <li><a href="#testimonials" className="hover:text-white">Testimonials</a></li>
             <li><a href="#contact" className="hover:text-white">Contact</a></li>
           </ul>
