@@ -599,6 +599,7 @@ function Footer() {
           <ul className="space-y-2 text-sm">
             <li><a href="#services" className="hover:text-white">House Calls</a></li>
             <li><a href="#lifestyle" className="hover:text-white">Lifestyle</a></li>
+            <li><a href="#housekeeping" className="hover:text-white">Housekeeping</a></li>
             <li><a href="#testimonials" className="hover:text-white">Testimonials</a></li>
             <li><a href="#contact" className="hover:text-white">Contact</a></li>
           </ul>
