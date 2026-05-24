@@ -52,17 +52,17 @@ const houseCalls: { n: string; title: string; desc: string; img?: string }[] = [
 ];
 
 const lifestyle = [
-  { title: "Errand Running", desc: "Pickups, drop-offs, and small tasks handled quietly so your day flows." },
-  { title: "Personal Shopper", desc: "Thoughtfully selected groceries, gifts, and essentials, delivered." },
-  { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are." },
+  { title: "Errand Running", desc: "Pickups, drop-offs, and small tasks handled quietly so your day flows.", img: svcErrands },
+  { title: "Personal Shopper", desc: "Thoughtfully selected groceries, gifts, and essentials, delivered.", img: svcShopper },
+  { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are.", img: svcMealprep },
 ];
 
 const housekeeping = [
-  { title: "Deep Home Cleaning", desc: "A thorough, room-by-room refresh — floors, surfaces, and every corner touched with care." },
-  { title: "Laundry & Ironing", desc: "Wash, fold, and press. Clothes returned crisp and ready to wear." },
-  { title: "Bed Linen Refresh", desc: "Fresh sheets, fluffed pillows, and a bed made to feel like a hotel." },
-  { title: "Kitchen Deep Clean", desc: "Appliances, cabinets, and workspaces — scrubbed, sanitized, and sparkling." },
-  { title: "Closet & Wardrobe Organizing", desc: "Neatly arranged, season-sorted, and easy to navigate every morning." },
+  { title: "Deep Home Cleaning", desc: "A thorough, room-by-room refresh — floors, surfaces, and every corner touched with care.", img: svcCleaning },
+  { title: "Laundry & Ironing", desc: "Wash, fold, and press. Clothes returned crisp and ready to wear.", img: svcLaundry },
+  { title: "Bed Linen Refresh", desc: "Fresh sheets, fluffed pillows, and a bed made to feel like a hotel.", img: svcLinens },
+  { title: "Kitchen Deep Clean", desc: "Appliances, cabinets, and workspaces — scrubbed, sanitized, and sparkling.", img: svcKitchen },
+  { title: "Closet & Wardrobe Organizing", desc: "Neatly arranged, season-sorted, and easy to navigate every morning.", img: svcCloset },
 ];
 
 const reasons = [
