@@ -269,7 +269,9 @@ function Lifestyle() {
               className="reveal group relative overflow-hidden rounded-3xl card-glass p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_30px_80px_-30px_rgba(0,0,0,0.25)] md:p-10"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="mb-10 h-10 w-10 rounded-full bg-eucalyptus/15 ring-1 ring-eucalyptus/30" />
+              <div className="mb-8 overflow-hidden rounded-2xl ring-1 ring-charcoal/10">
+                <img src={s.img} alt={s.title} loading="lazy" width={768} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              </div>
               <h3 className="font-display text-2xl tracking-tight text-charcoal md:text-3xl">
                 {s.title}
               </h3>
