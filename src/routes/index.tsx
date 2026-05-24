@@ -3,14 +3,15 @@ import { ArrowUpRight, Check, Clock, MapPin, Phone, Sparkles } from "lucide-reac
 import heroImg from "@/assets/hero.jpg";
 import houseCallImg from "@/assets/housecall.jpg";
 import lifestyleImg from "@/assets/lifestyle.jpg";
+import housekeepingImg from "@/assets/housekeeping.jpg";
 import straighteningImg from "@/assets/straightening.jpg";
 import weavelinesImg from "@/assets/weavelines.jpg";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { MeshBackground } from "@/components/site/MeshBackground";
 import { BookingWizard, openBookingWizard } from "@/components/site/BookingWizard";
-import { QuickPromptsDock } from "@/components/site/QuickPromptsDock";
 import { useReveal } from "@/hooks/use-reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
