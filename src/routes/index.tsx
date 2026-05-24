@@ -86,11 +86,11 @@ function Home() {
       <MeshBackground />
       <Nav />
       <BookingWizard />
-      <QuickPromptsDock />
       <WhatsAppFloat />
       <Hero />
       <HouseCalls />
       <Lifestyle />
+      <Housekeeping />
       <WhyUs />
       <Testimonials />
       <Hours />
