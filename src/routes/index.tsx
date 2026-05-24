@@ -6,6 +6,14 @@ import lifestyleImg from "@/assets/lifestyle.jpg";
 import housekeepingImg from "@/assets/housekeeping.jpg";
 import straighteningImg from "@/assets/straightening.jpg";
 import weavelinesImg from "@/assets/weavelines.jpg";
+import svcErrands from "@/assets/svc-errands.jpg";
+import svcShopper from "@/assets/svc-shopper.jpg";
+import svcMealprep from "@/assets/svc-mealprep.jpg";
+import svcCleaning from "@/assets/svc-cleaning.jpg";
+import svcLaundry from "@/assets/svc-laundry.jpg";
+import svcLinens from "@/assets/svc-linens.jpg";
+import svcKitchen from "@/assets/svc-kitchen.jpg";
+import svcCloset from "@/assets/svc-closet.jpg";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { MeshBackground } from "@/components/site/MeshBackground";
@@ -44,17 +52,17 @@ const houseCalls: { n: string; title: string; desc: string; img?: string }[] = [
 ];
 
 const lifestyle = [
-  { title: "Errand Running", desc: "Pickups, drop-offs, and small tasks handled quietly so your day flows." },
-  { title: "Personal Shopper", desc: "Thoughtfully selected groceries, gifts, and essentials, delivered." },
-  { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are." },
+  { title: "Errand Running", desc: "Pickups, drop-offs, and small tasks handled quietly so your day flows.", img: svcErrands },
+  { title: "Personal Shopper", desc: "Thoughtfully selected groceries, gifts, and essentials, delivered.", img: svcShopper },
+  { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are.", img: svcMealprep },
 ];
 
 const housekeeping = [
-  { title: "Deep Home Cleaning", desc: "A thorough, room-by-room refresh — floors, surfaces, and every corner touched with care." },
-  { title: "Laundry & Ironing", desc: "Wash, fold, and press. Clothes returned crisp and ready to wear." },
-  { title: "Bed Linen Refresh", desc: "Fresh sheets, fluffed pillows, and a bed made to feel like a hotel." },
-  { title: "Kitchen Deep Clean", desc: "Appliances, cabinets, and workspaces — scrubbed, sanitized, and sparkling." },
-  { title: "Closet & Wardrobe Organizing", desc: "Neatly arranged, season-sorted, and easy to navigate every morning." },
+  { title: "Deep Home Cleaning", desc: "A thorough, room-by-room refresh — floors, surfaces, and every corner touched with care.", img: svcCleaning },
+  { title: "Laundry & Ironing", desc: "Wash, fold, and press. Clothes returned crisp and ready to wear.", img: svcLaundry },
+  { title: "Bed Linen Refresh", desc: "Fresh sheets, fluffed pillows, and a bed made to feel like a hotel.", img: svcLinens },
+  { title: "Kitchen Deep Clean", desc: "Appliances, cabinets, and workspaces — scrubbed, sanitized, and sparkling.", img: svcKitchen },
+  { title: "Closet & Wardrobe Organizing", desc: "Neatly arranged, season-sorted, and easy to navigate every morning.", img: svcCloset },
 ];
 
 const reasons = [
@@ -261,7 +269,9 @@ function Lifestyle() {
               className="reveal group relative overflow-hidden rounded-3xl card-glass p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_30px_80px_-30px_rgba(0,0,0,0.25)] md:p-10"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="mb-10 h-10 w-10 rounded-full bg-eucalyptus/15 ring-1 ring-eucalyptus/30" />
+              <div className="mb-8 overflow-hidden rounded-2xl ring-1 ring-charcoal/10">
+                <img src={s.img} alt={s.title} loading="lazy" width={768} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              </div>
               <h3 className="font-display text-2xl tracking-tight text-charcoal md:text-3xl">
                 {s.title}
               </h3>
@@ -312,7 +322,9 @@ function Housekeeping() {
               className="reveal group relative overflow-hidden rounded-3xl card-glass p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_30px_80px_-30px_rgba(0,0,0,0.25)] md:p-10"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="mb-10 h-10 w-10 rounded-full bg-eucalyptus/15 ring-1 ring-eucalyptus/30" />
+              <div className="mb-8 overflow-hidden rounded-2xl ring-1 ring-charcoal/10">
+                <img src={s.img} alt={s.title} loading="lazy" width={768} height={768} className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              </div>
               <h3 className="font-display text-2xl tracking-tight text-charcoal md:text-3xl">
                 {s.title}
               </h3>
