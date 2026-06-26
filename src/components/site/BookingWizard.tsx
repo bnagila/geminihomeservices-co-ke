@@ -24,6 +24,10 @@ const focuses = [
   { id: "bed-linen", label: "Bed Linen Refresh" },
   { id: "kitchen-clean", label: "Kitchen Deep Clean" },
   { id: "closet-org", label: "Closet Organizing" },
+  { id: "nanny-newborn", label: "Newborn & Infant Nanny" },
+  { id: "nanny-playtime", label: "Nanny — Playtime & Storytime" },
+  { id: "nanny-homework", label: "Nanny — Homework Help" },
+  { id: "nanny-mealtime", label: "Nanny — Mealtime & Routines" },
 ];
 
 export type WizardOpenDetail = { focus?: string };

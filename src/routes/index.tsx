@@ -14,6 +14,11 @@ import svcLaundry from "@/assets/svc-laundry.jpg";
 import svcLinens from "@/assets/svc-linens.jpg";
 import svcKitchen from "@/assets/svc-kitchen.jpg";
 import svcCloset from "@/assets/svc-closet.jpg";
+import nannyImg from "@/assets/nanny.jpg";
+import svcNewborn from "@/assets/svc-newborn.jpg";
+import svcPlaytime from "@/assets/svc-playtime.jpg";
+import svcHomework from "@/assets/svc-homework.jpg";
+import svcMealtime from "@/assets/svc-mealtime.jpg";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { MeshBackground } from "@/components/site/MeshBackground";
@@ -55,6 +60,13 @@ const lifestyle = [
   { title: "Errand Running", desc: "Pickups, drop-offs, and small tasks handled quietly so your day flows.", img: svcErrands },
   { title: "Personal Shopper", desc: "Thoughtfully selected groceries, gifts, and essentials, delivered.", img: svcShopper },
   { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are.", img: svcMealprep },
+];
+
+const nanny = [
+  { title: "Newborn & Infant Care", desc: "Tender, attentive care for your littlest one — feeding, soothing, and safe sleep.", img: svcNewborn },
+  { title: "Playtime & Storytime", desc: "Imaginative play, songs, and read-alouds that nurture curious little minds.", img: svcPlaytime },
+  { title: "Homework & After-School", desc: "Patient guidance through reading, sums, and the school-day wind-down.", img: svcHomework },
+  { title: "Mealtime & Routines", desc: "Healthy meals, gentle naps, and the small rhythms that keep your home calm.", img: svcMealtime },
 ];
 
 const housekeeping = [
@@ -107,6 +119,7 @@ function Home() {
       <HouseCalls />
       <Lifestyle />
       <Housekeeping />
+      <Nanny />
       <WhyUs />
       <Testimonials />
       <Hours />
@@ -348,6 +361,77 @@ function Housekeeping() {
             height={900}
             className="h-[360px] w-full object-cover md:h-[520px]"
           />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Nanny() {
+  return (
+    <section id="nanny" className="relative overflow-hidden py-28 md:py-40">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-blush/40 blur-3xl" />
+        <div className="absolute -right-24 bottom-0 h-[28rem] w-[28rem] rounded-full bg-eucalyptus/20 blur-3xl" />
+      </div>
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="grid items-end gap-12 md:grid-cols-12">
+          <div className="reveal md:col-span-7">
+            <SectionLabel>Nanny Services</SectionLabel>
+            <h2 className="mt-5 font-display text-4xl leading-[1.02] tracking-tight text-charcoal md:text-6xl">
+              Warm hands. <span className="italic text-eucalyptus">Calm homes.</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-charcoal/65 md:text-lg">
+              Trusted, vetted nannies who treat your little ones with the patience and joy they deserve — so you can step out, breathe deep, or simply rest.
+            </p>
+          </div>
+          <div className="reveal md:col-span-5">
+            <div className="overflow-hidden rounded-3xl ring-1 ring-charcoal/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.25)]">
+              <img
+                src={nannyImg}
+                alt="A nanny smiling with two joyful toddlers in a sunlit Nairobi living room"
+                loading="lazy"
+                width={1408}
+                height={896}
+                className="aspect-[16/10] w-full object-cover transition-transform duration-[1200ms] hover:scale-[1.03]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {nanny.map((s, i) => (
+            <article
+              key={s.title}
+              className="reveal group relative overflow-hidden rounded-3xl card-glass p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_30px_80px_-30px_rgba(0,0,0,0.25)]"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <div className="mb-6 overflow-hidden rounded-2xl ring-1 ring-charcoal/10">
+                <img src={s.img} alt={s.title} loading="lazy" width={768} height={576} className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              </div>
+              <h3 className="font-display text-xl tracking-tight text-charcoal md:text-2xl">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-charcoal/65">{s.desc}</p>
+              <a
+                href={WHATSAPP}
+                className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-eucalyptus transition-colors hover:text-charcoal"
+              >
+                Request <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div className="reveal mt-14 flex flex-col items-start gap-4 rounded-3xl card-glass p-8 md:flex-row md:items-center md:justify-between md:p-10">
+          <div>
+            <div className="font-display text-2xl tracking-tight text-charcoal md:text-3xl">Every nanny, carefully chosen.</div>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-charcoal/65">Background-checked, reference-verified, and trained in gentle, modern childcare. Daily, weekly, or live-in arrangements.</p>
+          </div>
+          <button
+            onClick={() => openBookingWizard()}
+            className="inline-flex items-center gap-2 rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-white transition-all hover:bg-charcoal/90 hover:shadow-lg"
+          >
+            Request a Nanny <ArrowUpRight className="h-4 w-4" />
+          </button>
         </div>
       </div>
     </section>
@@ -612,6 +696,7 @@ function Footer() {
             <li><a href="#services" className="hover:text-white">House Calls</a></li>
             <li><a href="#lifestyle" className="hover:text-white">Lifestyle</a></li>
             <li><a href="#housekeeping" className="hover:text-white">Housekeeping</a></li>
+            <li><a href="#nanny" className="hover:text-white">Nanny</a></li>
             <li><a href="#testimonials" className="hover:text-white">Testimonials</a></li>
             <li><a href="#contact" className="hover:text-white">Contact</a></li>
           </ul>
