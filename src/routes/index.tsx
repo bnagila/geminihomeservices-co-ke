@@ -69,6 +69,16 @@ const lifestyle = [
   { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are.", img: svcMealprep },
 ];
 
+const staffing = [
+  { title: "Professional Nanny", desc: "Loving, trained childcare matched to your family's rhythm.", img: svcNewborn },
+  { title: "Housekeeper", desc: "Discreet, detail-oriented care for every room of your home.", img: staffHousekeeper },
+  { title: "Private Chef", desc: "Bespoke menus and elegant meals prepared in your kitchen.", img: staffChef },
+  { title: "Estate Manager", desc: "Quiet oversight of staff, vendors, and the running of your residence.", img: staffEstate },
+  { title: "Executive Personal Assistant", desc: "Calendars, travel, and the day-to-day, handled with poise.", img: staffPa },
+  { title: "Chauffeur", desc: "Punctual, professional driving with absolute discretion.", img: staffChauffeur },
+  { title: "Live-in Caregiver", desc: "Compassionate, dignified support for elders and recovering loved ones.", img: staffCaregiver },
+];
+
 const nanny = [
   { title: "Newborn & Infant Care", desc: "Tender, attentive care for your littlest one — feeding, soothing, and safe sleep.", img: svcNewborn },
   { title: "Playtime & Storytime", desc: "Imaginative play, songs, and read-alouds that nurture curious little minds.", img: svcPlaytime },
