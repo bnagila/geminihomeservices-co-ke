@@ -62,6 +62,13 @@ const lifestyle = [
   { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are.", img: svcMealprep },
 ];
 
+const nanny = [
+  { title: "Newborn & Infant Care", desc: "Tender, attentive care for your littlest one — feeding, soothing, and safe sleep.", img: svcNewborn },
+  { title: "Playtime & Storytime", desc: "Imaginative play, songs, and read-alouds that nurture curious little minds.", img: svcPlaytime },
+  { title: "Homework & After-School", desc: "Patient guidance through reading, sums, and the school-day wind-down.", img: svcHomework },
+  { title: "Mealtime & Routines", desc: "Healthy meals, gentle naps, and the small rhythms that keep your home calm.", img: svcMealtime },
+];
+
 const housekeeping = [
   { title: "Deep Home Cleaning", desc: "A thorough, room-by-room refresh — floors, surfaces, and every corner touched with care.", img: svcCleaning },
   { title: "Laundry & Ironing", desc: "Wash, fold, and press. Clothes returned crisp and ready to wear.", img: svcLaundry },
