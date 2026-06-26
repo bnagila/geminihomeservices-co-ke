@@ -19,6 +19,13 @@ import svcNewborn from "@/assets/svc-newborn.jpg";
 import svcPlaytime from "@/assets/svc-playtime.jpg";
 import svcHomework from "@/assets/svc-homework.jpg";
 import svcMealtime from "@/assets/svc-mealtime.jpg";
+import staffHero from "@/assets/staff-hero.jpg";
+import staffHousekeeper from "@/assets/staff-housekeeper.jpg";
+import staffChef from "@/assets/staff-chef.jpg";
+import staffEstate from "@/assets/staff-estate.jpg";
+import staffPa from "@/assets/staff-pa.jpg";
+import staffChauffeur from "@/assets/staff-chauffeur.jpg";
+import staffCaregiver from "@/assets/staff-caregiver.jpg";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { MeshBackground } from "@/components/site/MeshBackground";
@@ -60,6 +67,16 @@ const lifestyle = [
   { title: "Errand Running", desc: "Pickups, drop-offs, and small tasks handled quietly so your day flows.", img: svcErrands },
   { title: "Personal Shopper", desc: "Thoughtfully selected groceries, gifts, and essentials, delivered.", img: svcShopper },
   { title: "Meal Prep Assistance", desc: "A clean kitchen and prepared meals — ready when you are.", img: svcMealprep },
+];
+
+const staffing = [
+  { title: "Professional Nanny", desc: "Loving, trained childcare matched to your family's rhythm.", img: svcNewborn },
+  { title: "Housekeeper", desc: "Discreet, detail-oriented care for every room of your home.", img: staffHousekeeper },
+  { title: "Private Chef", desc: "Bespoke menus and elegant meals prepared in your kitchen.", img: staffChef },
+  { title: "Estate Manager", desc: "Quiet oversight of staff, vendors, and the running of your residence.", img: staffEstate },
+  { title: "Executive Personal Assistant", desc: "Calendars, travel, and the day-to-day, handled with poise.", img: staffPa },
+  { title: "Chauffeur", desc: "Punctual, professional driving with absolute discretion.", img: staffChauffeur },
+  { title: "Live-in Caregiver", desc: "Compassionate, dignified support for elders and recovering loved ones.", img: staffCaregiver },
 ];
 
 const nanny = [
@@ -120,6 +137,7 @@ function Home() {
       <Lifestyle />
       <Housekeeping />
       <Nanny />
+      <Staffing />
       <WhyUs />
       <Testimonials />
       <Hours />
@@ -437,6 +455,81 @@ function Nanny() {
     </section>
   );
 }
+
+function Staffing() {
+  return (
+    <section id="staffing" className="relative overflow-hidden bg-cream/60 py-28 md:py-40">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute -right-32 top-10 h-[28rem] w-[28rem] rounded-full bg-eucalyptus/15 blur-3xl" />
+        <div className="absolute -left-24 bottom-0 h-96 w-96 rounded-full bg-sage/40 blur-3xl" />
+      </div>
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="grid items-end gap-12 md:grid-cols-12">
+          <div className="reveal md:col-span-7">
+            <SectionLabel>Domestic Staffing Solutions</SectionLabel>
+            <h2 className="mt-5 font-display text-4xl leading-[1.02] tracking-tight text-charcoal md:text-6xl">
+              Trusted Professionals <span className="italic text-eucalyptus">for exceptional homes.</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-charcoal/70 md:text-lg">
+              Inviting someone into your home requires complete confidence. Many recruitment channels fall short on background checks, reference verification, and quality assurance — leaving families exposed to unnecessary risk.
+            </p>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-charcoal/70 md:text-lg">
+              At Gemini Home Services, we provide carefully selected domestic professionals — thoroughly vetted, reference-checked, and matched to your household's specific needs. Each one is known for integrity, discretion, and a quiet commitment to excellence.
+            </p>
+          </div>
+          <div className="reveal md:col-span-5">
+            <div className="overflow-hidden rounded-3xl ring-1 ring-charcoal/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.25)]">
+              <img
+                src={staffHero}
+                alt="A professional domestic staff member in a refined Nairobi home"
+                loading="lazy"
+                width={1408}
+                height={896}
+                className="aspect-[16/10] w-full object-cover transition-transform duration-[1200ms] hover:scale-[1.03]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {staffing.map((s, i) => (
+            <article
+              key={s.title}
+              className="reveal group relative overflow-hidden rounded-3xl card-glass p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-30px_rgba(0,0,0,0.18)] transition-all hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_30px_80px_-30px_rgba(0,0,0,0.25)]"
+              style={{ transitionDelay: `${i * 70}ms` }}
+            >
+              <div className="mb-6 overflow-hidden rounded-2xl ring-1 ring-charcoal/10">
+                <img src={s.img} alt={s.title} loading="lazy" width={768} height={576} className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              </div>
+              <h3 className="font-display text-xl tracking-tight text-charcoal md:text-2xl">{s.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-charcoal/65">{s.desc}</p>
+              <a
+                href={WHATSAPP}
+                className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-eucalyptus transition-colors hover:text-charcoal"
+              >
+                Request <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div className="reveal mt-14 flex flex-col items-start gap-4 rounded-3xl card-glass p-8 md:flex-row md:items-center md:justify-between md:p-10">
+          <div>
+            <div className="font-display text-2xl tracking-tight text-charcoal md:text-3xl">Peace of mind, built in.</div>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-charcoal/65">Our meticulous recruitment process means every placement is thoroughly vetted, reference-checked, and matched to your household — so you enjoy exceptional service with complete confidence.</p>
+          </div>
+          <button
+            onClick={() => openBookingWizard()}
+            className="inline-flex items-center gap-2 rounded-full bg-charcoal px-6 py-3 text-sm font-medium text-white transition-all hover:bg-charcoal/90 hover:shadow-lg"
+          >
+            Request Staff <ArrowUpRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 function WhyUs() {
   const metrics = [
