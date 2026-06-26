@@ -119,6 +119,7 @@ function Home() {
       <HouseCalls />
       <Lifestyle />
       <Housekeeping />
+      <Nanny />
       <WhyUs />
       <Testimonials />
       <Hours />
