@@ -696,6 +696,7 @@ function Footer() {
             <li><a href="#services" className="hover:text-white">House Calls</a></li>
             <li><a href="#lifestyle" className="hover:text-white">Lifestyle</a></li>
             <li><a href="#housekeeping" className="hover:text-white">Housekeeping</a></li>
+            <li><a href="#nanny" className="hover:text-white">Nanny</a></li>
             <li><a href="#testimonials" className="hover:text-white">Testimonials</a></li>
             <li><a href="#contact" className="hover:text-white">Contact</a></li>
           </ul>
